@@ -40,7 +40,7 @@ jobs:
           tar --strip-components=1 -zxf dol.tar.gz -C ./
           ./compile.sh
           mv Deg*.html release/index.html
-          mv -r img release/img         
+          mv img release/      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
