@@ -39,7 +39,7 @@ jobs:
           mkdir -p {src,release}
           tar --strip-components=1 -zxf dol.tar.gz -C ./src
           cd src
-          ./src/compile.sh
+          ./compile.sh
           mv Deg*.html ../release/index.html
           mv img ../release/      
       - name: Upload artifact
