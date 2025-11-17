@@ -33,11 +33,18 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      - name: Download Release
+        run:
+          wget "https://gitgud.io/Vrelnir/degrees-of-lewdity/-/archive/0.5.6.10/degrees-of-lewdity-0.5.6.10.zip" -O "dol.zip"
+          mkdir {src,release}
+          tar --strip-components=1 -zxvf dol.tar.gz -C  src 
+          mv src/Deg*.html release/index.html
+          mv src/img release/img         
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload entire repository
-          path: 'src'
+          path: 'release'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
