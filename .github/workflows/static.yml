@@ -35,9 +35,9 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Download Release
         run: |
-          wget "https://gitgud.io/Vrelnir/degrees-of-lewdity/-/archive/0.5.6.10/degrees-of-lewdity-0.5.6.10.tar.gz" -O "dol.tar.gz"
+          wget -nv "https://gitgud.io/Vrelnir/degrees-of-lewdity/-/archive/0.5.6.10/degrees-of-lewdity-0.5.6.10.tar.gz" -O "dol.tar.gz"
           mkdir -p release
-          tar --strip-components=1 -zxvf dol.tar.gz -C ./
+          tar --strip-components=1 -zxf dol.tar.gz -C ./
           ./compile.sh
           mv Deg*.html release/index.html
           mv -r img release/img         
