@@ -34,10 +34,10 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Download Release
-        run:
+        run: |
           wget "https://gitgud.io/Vrelnir/degrees-of-lewdity/-/archive/0.5.6.10/degrees-of-lewdity-0.5.6.10.zip" -O "dol.zip"
           mkdir {src,release}
-          tar --strip-components=1 -zxvf dol.tar.gz -C  src 
+          tar --strip-components=1 -zxvf dol.tar.gz -C src 
           mv src/Deg*.html release/index.html
           mv src/img release/img         
       - name: Upload artifact
