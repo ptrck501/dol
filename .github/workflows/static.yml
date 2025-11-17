@@ -39,9 +39,9 @@ jobs:
           mkdir -p release
           tar --strip-components=1 -zxf dol.tar.gz -C ./
           ./compile.sh
-          mv img release/
-          ls -la
+          find . -maxdepth 1 -type l -delete
           mv Deg*.html index.html
+          mv img release/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
