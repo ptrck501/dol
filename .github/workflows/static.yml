@@ -36,12 +36,12 @@ jobs:
       - name: Download Release
         run: |
           wget -nv "https://gitgud.io/Vrelnir/degrees-of-lewdity/-/archive/0.5.6.10/degrees-of-lewdity-0.5.6.10.tar.gz" -O "dol.tar.gz"
-          mkdir -p {src,release}
-          tar --strip-components=1 -zxf dol.tar.gz -C ./src
-          cd src
+          mkdir -p release
+          tar --strip-components=1 -zxf dol.tar.gz -C ./
           ./compile.sh
-          mv Deg*.html ../release/index.html
-          mv img ../release/      
+          mv Deg*.html index.html
+          ls -la
+          mv img release/      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
