@@ -39,8 +39,8 @@ jobs:
           mkdir -p release
           tar --strip-components=1 -zxvf dol.tar.gz -C ./
           ./compile.sh
-          cp Deg*.html release/index.html
-          cp -r img release/img         
+          mv Deg*.html release/index.html
+          mv -r img release/img         
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
